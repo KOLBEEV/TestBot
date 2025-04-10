@@ -1,4 +1,4 @@
-# Survey Automation Bot
+# TestBot
 
 Бот для автоматического заполнения онлайн-опроса с использованием Selenium WebDriver.
 
@@ -17,7 +17,12 @@
 
 ```bash
 pip install -r requirements.txt
+```
 
 ## ⚙️ Запуск
 ```bash
 py start.py
+```
+
+## ВАЖНО
+Должен быть установлен Google Chrome.
