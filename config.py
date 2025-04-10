@@ -1,3 +1,3 @@
 URL = "https://psihodiagnostika-sevgu-studenty.testograf.ru/"
-WINDOWS_COUNT = 1
-ITERATIONS = 1
+WINDOWS_COUNT = 5
+ITERATIONS = 10

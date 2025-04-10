@@ -6,21 +6,20 @@ import time
 
 def run_bot(id):
     bot = SurveyBot(URL, id)
-    for i in range(ITERATIONS):
-        bot.start_survey()
-        time.sleep(2)
+    bot.start_survey()
+    time.sleep(0.1)
 
 
 if __name__ == "__main__":
     threads = []
+    for j in range(ITERATIONS):
+        for i in range(WINDOWS_COUNT):
+            thread = threading.Thread(target=run_bot, args=(i+1,))
+            threads.append(thread)
+            thread.start()
+            time.sleep(0.1)
 
-    for i in range(WINDOWS_COUNT):
-        thread = threading.Thread(target=run_bot, args=(i+1,))
-        threads.append(thread)
-        thread.start()
-        time.sleep(1)
-
-    for thread in threads:
-        thread.join()
+        for thread in threads:
+            thread.join()
 
     print("END!")
